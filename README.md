@@ -30,5 +30,3 @@ To provide a smart, data-driven learning platform that helps users identify stre
 🧠 Smart question generation using AI based on user performance
 📊 Personalized learning roadmap using AI analytics
 💼 Company-specific interview preparation modules (technical + HR rounds)
-
-Git-Hub: 
