@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Mock Test{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card card-custom p-4">
+
+        <h2 class="mb-4">Mock Test</h2>
+
+        <form action="/submit-test" method="POST">
+
+            {% for q in questions %}
+
+            <div class="mb-4">
+
+                <h5 class="fw-bold">
+                    {{ loop.index }}. {{ q[1] }}
+                </h5>
+
+                <small class="text-info">
+                    {{ q[7] }} → {{ q[8] }}
+                </small>
+
+                <input
+                    type="hidden"
+                    name="question_ids"
+                    value="{{ q[0] }}"
+                >
+
+                <div class="form-check mt-2">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="answer_{{ q[0] }}"
+                        value="A"
+                        required
+                    >
+                    <label class="form-check-label">
+                        {{ q[2] }}
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="answer_{{ q[0] }}"
+                        value="B"
+                    >
+                    <label class="form-check-label">
+                        {{ q[3] }}
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="answer_{{ q[0] }}"
+                        value="C"
+                    >
+                    <label class="form-check-label">
+                        {{ q[4] }}
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="answer_{{ q[0] }}"
+                        value="D"
+                    >
+                    <label class="form-check-label">
+                        {{ q[5] }}
+                    </label>
+                </div>
+
+            </div>
+
+            <hr>
+
+            {% endfor %}
+
+            <input
+                type="hidden"
+                name="categories"
+                value="{{ categories|join(',') }}"
+            >
+
+            <button class="btn btn-success btn-lg mt-3">
+                Submit Test
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

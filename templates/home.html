@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Career Pilot{% endblock %}
+
+{% block content %}
+
+<div class="text-center py-5">
+
+    <h1 class="display-3 fw-bold">
+        Career Pilot
+    </h1>
+
+    <p class="lead mt-3">
+        Practice aptitude, technical and HR questions.
+        Track your performance and improve your placement readiness.
+    </p>
+
+    {% if not session.get('user_id') %}
+
+    <div class="mt-4">
+        <a href="/register" class="btn btn-primary btn-lg me-3">
+            Get Started
+        </a>
+
+        <a href="/login" class="btn btn-outline-light btn-lg">
+            Login
+        </a>
+    </div>
+
+    {% endif %}
+
+</div>
+
+<div class="row mt-5">
+
+    <div class="col-md-4 mb-4">
+        <div class="card card-custom p-4 h-100">
+            <h3>📚 Question Bank</h3>
+            <p>
+                Practice aptitude, HR and technical questions.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card card-custom p-4 h-100">
+            <h3>📝 Mock Tests</h3>
+            <p>
+                Take tests and improve your confidence.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card card-custom p-4 h-100">
+            <h3>📊 Performance Tracking</h3>
+            <p>
+                View scores and progress.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

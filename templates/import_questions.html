@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Import Questions{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="card card-custom p-4">
+
+        <h2 class="mb-4">Import Questions CSV</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <input
+                type="file"
+                name="csv_file"
+                class="form-control mb-3"
+                required>
+
+            <button class="btn btn-success">
+                Upload CSV
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

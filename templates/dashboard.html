@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">
+    Welcome, {{ name }}
+</h1>
+
+<div class="row">
+
+    <div class="row mt-4">
+
+    <div class="col-md-3">
+        <div class="card shadow text-center p-3">
+            <h5>Total Tests</h5>
+            <h2>{{ total_tests }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow text-center p-3">
+            <h5>Average Score</h5>
+            <h2>{{ avg_score }}%</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow text-center p-3">
+            <h5>Highest Score</h5>
+            <h2>{{ highest_score }}%</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow text-center p-3">
+            <h5>Latest Score</h5>
+            <h2>{{ latest_score }}%</h2>
+        </div>
+    </div>
+
+    </div>
+    <a href="/start-test" class="btn btn-primary btn-lg p-2 mt-4">
+        Start Test
+    </a>
+    <a href="/history"
+        class="btn btn-primary btn-lg p-2 mt-4">
+        View Test History
+    </a>
+
+    {% if chart_url %}
+    <a href="/analysis" class="btn btn-success btn-lg p-2 mt-4">
+        View Full Analysis
+    </a>
+{% endif %}
+
+</div>
+
+
+
+{% endblock %}

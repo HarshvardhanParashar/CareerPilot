@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Add Question{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+        <div class="card card-custom p-4">
+
+            <h2 class="mb-4">Add Question</h2>
+
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label>Main Category</label>
+                    <select class="form-control" name="main_category" required>
+                    <option value="">Select Category</option>
+
+                        <option>Technical</option>
+                        <option>Aptitude</option>
+                        <option>Reasoning</option>
+                        <option>Soft Skills</option>
+                        <option>HR</option>
+
+                    </select>
+                </div>
+
+            <div class="mb-3">
+                <label>Sub Category</label>
+                <input
+                type="text"
+                class="form-control"
+                name="sub_category"
+                placeholder="Example: DBMS, OS, CN, DSA"
+                required>
+            </div>
+
+                <div class="mb-3">
+                    <label>Question</label>
+                    <textarea
+                        class="form-control"
+                        name="question"
+                        rows="3"
+                        required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label>Option A</label>
+                    <input type="text" class="form-control" name="option_a" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Option B</label>
+                    <input type="text" class="form-control" name="option_b" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Option C</label>
+                    <input type="text" class="form-control" name="option_c" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Option D</label>
+                    <input type="text" class="form-control" name="option_d" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Correct Answer</label>
+                    <select class="form-control" name="correct_answer">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-success">
+                    Save Question
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

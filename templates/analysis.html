@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Analysis{% endblock %}
+
+{% block content %}
+
+<h2>📊 Full Performance Analysis</h2>
+
+<!-- STATS -->
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="card p-3 shadow text-center">
+            <h5>Total Tests</h5>
+            <h3>{{ total_tests }}</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 shadow text-center">
+            <h5>Average Score</h5>
+            <h3>{{ avg_score }}%</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 shadow text-center">
+            <h5>Highest</h5>
+            <h3>{{ highest_score }}%</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 shadow text-center">
+            <h5>Lowest</h5>
+            <h3>{{ lowest_score }}%</h3>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- CHART -->
+<div class="mt-4">
+    <h4>📈 Performance Trend</h4>
+    <img src="{{ url_for('static', filename='charts/' + session['user_id'] ~ '_performance.png') }}">
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">
+    Admin Dashboard
+</h1>
+
+<div class="row">
+
+    <div class="col-md-4 mb-4">
+        <div class="card card-custom p-4">
+            <h4>Total Users</h4>
+            <h2>{{ total_users }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card card-custom p-4">
+            <h4>Total Questions</h4>
+            <h2>{{ total_questions }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card card-custom p-4">
+            <h4>Total Tests</h4>
+            <h2>{{ total_tests }}</h2>
+        </div>
+    </div>
+
+</div>
+
+<div class="mt-4">
+
+    <a href="/add-question"
+        class="btn btn-success me-2">
+        Add Question
+    </a>
+
+    <a href="/import-questions"
+        class="btn btn-info">
+        Import CSV
+    </a>
+    <a href="/questions"
+        class="btn btn-warning me-2">
+        Question Bank
+    </a>
+
+    <a href="/users"
+        class="btn btn-primary">
+        Users
+        </a>
+
+</div>
+
+{% endblock %}

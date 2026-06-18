@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card card-custom p-4">
+                <form action="/generate-test" method="POST">
+
+        <h2>Select Categories</h2>
+
+
+        <h4>Technical</h4>
+
+<input type="checkbox" name="categories" value="DBMS"> DBMS<br>
+<input type="checkbox" name="categories" value="OS"> Operating System<br>
+<input type="checkbox" name="categories" value="CN"> Computer Networks<br>
+<input type="checkbox" name="categories" value="DSA"> Data Structures & Algorithms<br>
+
+<hr>
+
+<h4>Aptitude</h4>
+
+<input type="checkbox" name="categories" value="Percentage"> Percentage<br>
+<input type="checkbox" name="categories" value="Profit and Loss"> Profit and Loss<br>
+<input type="checkbox" name="categories" value="Ratio and Proportion"> Ratio and Proportion<br>
+<input type="checkbox" name="categories" value="Average"> Average<br>
+
+<hr>
+
+<h4>Reasoning</h4>
+
+<input type="checkbox" name="categories" value="Logical Reasoning"> Logical Reasoning<br>
+<input type="checkbox" name="categories" value="Blood Relations"> Blood Relations<br>
+<input type="checkbox" name="categories" value="Direction Sense"> Direction Sense<br>
+<input type="checkbox" name="categories" value="Number Series"> Number Series<br>
+
+<hr>
+
+<h4>HR</h4>
+
+<input type="checkbox" name="categories" value="HR Interview"> HR Interview<br>
+
+<hr>
+
+<h4>Soft Skills</h4>
+
+<input type="checkbox" name="categories" value="Communication"> Communication<br>
+<input type="checkbox" name="categories" value="Teamwork"> Teamwork<br>
+<input type="checkbox" name="categories" value="Leadership"> Leadership<br>
+<input type="checkbox" name="categories" value="Time Management"> Time Management<br>
+            <button class="btn btn-success mt-4">
+                Generate Test
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

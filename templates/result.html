@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Test Result{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card card-custom shadow-lg p-5 text-center">
+
+        <h1 class="mb-4">
+            Test Result
+        </h1>
+
+        <h2>
+            {{ score }} / {{ total_questions }}
+        </h2>
+
+        <h3 class="mt-3">
+            {{ percentage }}%
+        </h3>
+
+        {% if percentage >= 80 %}
+            <div class="alert alert-success mt-4">
+                Excellent Performance 🎉
+            </div>
+
+        {% elif percentage >= 60 %}
+            <div class="alert alert-info mt-4">
+                Good Performance 👍
+            </div>
+
+        {% elif percentage >= 40 %}
+            <div class="alert alert-warning mt-4">
+                Needs Improvement 📚
+            </div>
+
+        {% else %}
+            <div class="alert alert-danger mt-4">
+                Keep Practicing 💪
+            </div>
+        {% endif %}
+
+        <div class="mt-4">
+
+            <a href="/dashboard"
+               class="btn btn-primary">
+                Dashboard
+            </a>
+
+            <a href="/start-test"
+               class="btn btn-success">
+                Take Another Test
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
